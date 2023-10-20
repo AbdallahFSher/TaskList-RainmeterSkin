@@ -1,10 +1,12 @@
 function Initialize()
+    taskCount = 0
     taskPath = SKIN:MakePathAbsolute('\\@Resources\\taskPersistent.txt')
     taskFile = io.open(taskPath, "a+")
     io.output(taskFile)
     taskList = {}
     for line in taskFile:lines() do
         taskList[#taskList+1] = {0, line};
+        taskCount = taskCount + 1
     end
     taskString = ""
     needRefresh = 1
@@ -31,4 +33,23 @@ function addTask()
     taskList[#taskList+1] = {0, task}
     needRefresh = 1
     io.write('\n'..task)
+end
+
+function removeTask(index)
+    table.remove(taskList, index)
+    print(index)
+    io.close()
+    os.remove(taskPath)
+    taskFile = io.open(taskPath, "a+")
+    io.output(taskFile)
+    for i = 1, #taskList do
+        io.write(taskList[i][2]..'\n')
+    end
+    needRefresh = 1
+end
+
+function detLine()
+    mouseX = SKIN:GetVariable('$MouseX$')
+    mouseY = SKIN:GetVariable('MouseYPos')
+    removeTask(math.ceil(mouseY/40))
 end

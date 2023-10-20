@@ -1,0 +1,3 @@
+[0.1]
+- Initial Release
+- Full functionality with bugs and unfinished aesthetics

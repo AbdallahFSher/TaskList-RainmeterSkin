@@ -1,0 +1,4 @@
+[0.1]
+- After restarting my PC, the task list was empty
+- Sometimes the wrong index is picked, deleting the wrong task (work on solidifying the line height)
+- Occasionally, after refreshing the list, an extra blank line is inserted (most often observed when refreshing immediately after adding a task)
