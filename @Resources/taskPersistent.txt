@@ -1,0 +1,2 @@
+Click a line to delete it
+Click add task to add a new one!

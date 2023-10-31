@@ -1,3 +1,8 @@
 [0.1]
 - Initial Release
 - Full functionality with bugs and unfinished aesthetics
+
+[0.2]
+- Added 'responsible' file use (only opening and closing the text file when necessary)
+- Reskinned the widget to look a bit nicer
+- Adjusted line-height to fix b0.1.2
